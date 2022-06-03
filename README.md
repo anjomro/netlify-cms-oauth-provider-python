@@ -6,6 +6,19 @@ Other implementations
 - [Go lang](https://github.com/igk1972/netlify-cms-oauth-provider-go)
 - [Node.js](https://github.com/vencax/netlify-cms-github-oauth-provider)
 
+
+## Run using Docker-Compose
+1) Make sure [Docker](https://docs.docker.com/get-docker/) and [Docker-Compose](https://docs.docker.com/compose/overview/) are installed.
+2) Download `docker-compose.yml` from [here](https://raw.githubusercontent.com/anjomro/netlify-cms-oauth-provider-python/master/main.py)
+   1) In a Linux Bash-Shell simply use: `curl -O https://raw.githubusercontent.com/anjomro/netlify-cms-oauth-provider-python/master/docker-compose.yml`
+3) Change in the directory of the downloaded `docker-compose.yml` file and run `docker-compose up -d`
+4) The service is now running on port `7080`. It is advised to use a reverse proxy like [Caddy](https://caddyserver.com/) to secure the service using a TLS Certificate.
+
+# Run using Docker
+1) Make sure [Docker](https://docs.docker.com/get-docker/) is installed.
+2) Run `docker run -p 7080:80  --restart always -d --rm --name cms-oauth-provider ghcr.io/anjomro/netlify-cms-oauth-provider-python:latest`
+3) The service is now running on port `7080`. It is advised to use a reverse proxy like [Caddy](https://caddyserver.com/) to secure the service using a TLS Certificate.
+
 ## 1) Install
 
 For mac and linux
