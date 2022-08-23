@@ -4,5 +4,13 @@ services:
         ports:
             - '7080:80'
         restart: always
-        container_name: provider
+        container_name: netlify_cms_provider
         image: 'ghcr.io/anjomro/netlify-cms-oauth-provider-python:latest'
+        environment:
+            OAUTH_CLIENT_ID: 'your client id'
+            OAUTH_CLIENT_SECRET: 'your github secret'
+            GIT_HOSTNAME: 'https://github.com'
+            OAUTH_TOKEN_PATH: '/login/oauth/access_token'
+            OAUTH_AUTHORIZE_PATH: '/login/oauth/authorize'
+            SCOPES: 'user,repo'
+            SSL_ENABLED: '0'
